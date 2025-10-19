@@ -41,6 +41,8 @@ call plug#begin('~/.config/nvim/plugins')
     
     " Цветовая схема
     Plug 'folke/tokyonight.nvim'
+    Plug 'KijitoraFinch/nanode.nvim'
+    Plug 'lucasadelino/conifer.nvim'
 
     " Строка состояния
     Plug 'nvim-lualine/lualine.nvim'
@@ -82,7 +84,9 @@ syntax on            " Включить подсветку синтаксиса
 " ============================================================================
 
 " Цветовая схема
-colorscheme tokyonight
+"colorscheme tokyonight
+"colorscheme nanode
+colorscheme conifer
 
 lua << END
 
