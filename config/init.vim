@@ -73,9 +73,6 @@ call plug#begin('~/.config/nvim/plugins')
     " Терминал внутри nvim
     Plug 'akinsho/toggleterm.nvim'
 
-    " Статистика времени кодирования
-    Plug 'wakatime/vim-wakatime'
-
 call plug#end()
 filetype indent off   " Отключить специфичные для типов файлов отступы
 syntax on            " Включить подсветку синтаксиса
