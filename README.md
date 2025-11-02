@@ -11,10 +11,10 @@
 - `Node.js` - Для установки LSP сервером
   - **Установка в Linux:**
     - ```bash
-      sudo [type: pacman, apt ...] [type: -S, install] nodejs npm
+      sudo [type: pacman, apt ...] [type: -S, install ...] nodejs npm
       ```
 - `Python` - Для установки также некоторых LSP которых нету в `node.js`
   - **Установка в Linux:**
     - ```bash
-      sudo [type: pacman, apt ...] [type: -S, install] python3 pip3
+      sudo [type: pacman, apt ...] [type: -S, install ...] python3 pip3
       ```
