@@ -42,10 +42,7 @@ set hidden                  " Разречить фоновые буферы
 call plug#begin('~/.config/nvim/plugins')
     
     " Цветовая схема
-    Plug 'folke/tokyonight.nvim'
-    Plug 'KijitoraFinch/nanode.nvim'
     Plug 'lucasadelino/conifer.nvim'
-    Plug 'morhetz/gruvbox'
 
     " Строка состояния
     Plug 'nvim-lualine/lualine.nvim'
@@ -93,10 +90,7 @@ syntax on            " Включить подсветку синтаксиса
 " ============================================================================
 
 " Цветовая схема
-"colorscheme tokyonight
-"colorscheme nanode
 colorscheme conifer
-"colorscheme gruvbox
 
 lua << END
 
@@ -132,12 +126,25 @@ vim.keymap.set('n', '[c', function() require('gitsigns').prev_hunk() end)
 vim.keymap.set('n', '<leader>hp', function() require('gitsigns').preview_hunk() end)
 
 -- Строка вкладок
-require("bufferline").setup({})
+require("bufferline").setup({
+    options = {
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer", 
+                highlight = "Directory", 
+                separator = true, 
+            }
+        },
+    }
+})
 
 -- Хлебные крошки | Перемещение
-vim.keymap.set('n', '<Leader>b', function()
-    require('dropbar.api').pick()
-end, { desc = 'Dropbar: Pick Mode' })
+local dropbar_api = require('dropbar.api')
+vim.keymap.set('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
+vim.keymap.set('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
+vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
+
 
 -- Toggleterm
 require('toggleterm').setup({
