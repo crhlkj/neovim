@@ -93,6 +93,7 @@ syntax on            " Включить подсветку синтаксиса
 colorscheme conifer
 
 lua << END
+vim.g.mapleader = " "
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
